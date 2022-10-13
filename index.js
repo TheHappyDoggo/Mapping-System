@@ -6,7 +6,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 function setMarker() {
     var latitude = parseFloat(document.getElementById("latitude").value);
-    var longitude = parseFloat(document.getElementById("longitude").value);   
+    var longitude = parseFloat(document.getElementById("longitude").value);
     var marker = L.marker([latitude, longitude]).addTo(map);
-    map.flyTo(L.LatLng(latitude, longitude));  
+    map.setView([latitude, longitude], 13);
 }
+
+// function onMapClick(e) {
+//     var mark = L.marker(e.latlng).addTo(map);
+// }
+
+// map.on('click', onMapClick);;
